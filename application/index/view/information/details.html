@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <header></header>
+        {include file="common/head" }
+        <div class="wrap layout information">
+                <div class="left">
+                    <!-- 文章 -->
+                  <div class="article">
+                      <div class="head">
+                          <h3>{$info.title}</h3>
+                          <div class="text">
+                              <span class="label">
+                                {switch info.type}
+                                   {case 0}Chứng khoán{/case}
+                                    {case 1}Forex{/case}
+                                    {default /}Kim loại quý
+                                    {/switch}
+                              </span>
+                              <span class="time"><img src="/static/img/clock.png" alt="">{$info.time}</span>
+                              <span><img src="/static/img/see.png" alt="">{$info.num}</span>
+                          </div>
+
+                          <div class="paragraph">
+                               <div class="content">
+                                    {$info.editorValue|raw}
+                                    
+                          </div>
+                          <p class="affirming">
+                                Hình ảnh chỉ dùng cho mục đích học tập, tham khảo, minh họa cho bài viết. Trang không sở hữu bản quyền hình ảnh, bản quyền gốc thuộc về tạo ra nó. Nếu bạn là người sở hữu và không muốn trang đăng tải, vui lòng liên hệ để chúng tôi xóa đi.
+                          </p>
+                          <div class="operation">
+                              <p class="fabulous"><img src="/img/fabulous.png" alt="" ></p>
+                              <p class="collection"><img src="/static/img/collection.png" alt=""></p>
+                              <p><img src="/static/img/share.png" alt=""></p>
+                          </div>
+                        </div>
+
+
+                      </div>
+                  </div>
+
+                  <!-- 相关新闻 -->
+                  <div class="relevant_news">
+                      <h6>Tin tức liên quan</h6>
+                      <ul>
+                        {volist name="data" id="vo"}
+                          <li><a href="index/information/details?id={$vo.id}">{$vo.title}</a></li>
+                        {/volist}
+                      </ul>
+                  </div>
+                  <!-- 登陆提示 -->
+                  <div class="landing_tips">
+                      <span class="text">Bạn ơi, đừng chỉ xem một mình, mau đăng ký bàn luận cùng mọi người nè~</span>
+                      <div class="btn">
+                          <a  href="" class="register">Đăng ký ngay</a>
+                          <a href="" class="login">Đăng nhập</a>
+                      </div>
+                  </div>
+                  <div id="comment"></div>
+                </div>
+                <div id="side"></div>
+            </div>
+   <footer></footer>
+   {include file="common/footer" /}
+</body>
+</html>
+<script src="/static/js/layui.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+<script src="/static/js/common.js"></script>
+<script type="text/javascript">
+      $('.nav ul li:eq(1)').addClass('active');
+
+   </script>

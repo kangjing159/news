@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <header></header>
+        {include file="common/head" }
+        <div class="calendar_datails layout">
+            <div class="message">
+                <h4>澳大利亚至8月18日当周ANZ消费者信心指数</h4>
+                <div class="box1">
+                    <p>
+                            下次公布时间： 08-20,07:30 <br>
+数据公布机构： 澳新银行 <br>
+发布频率： 每周一次  <br>
+统计方法： 100为基准加上各分项看好与不看好人数之差的简单平均数 <br>
+                        </p>
+                </div>
+                <div class="box2">
+                    <p>数据影响</p>
+                    <p>公布值＞预期值=利好澳元</p>
+                </div>
+                <div class="box2">
+                        <p>数据释意</p>
+                        <p>澳大利亚消费者信心指数是对消费者最近一周内消费信心的调查结果，通常该信心指数会反映出对已发生及即将发生的财经事件的民众情绪。</p>
+                </div>
+                <img src="/static/img/biao1.png" alt="">
+                <img src="/static/img/biao2.png" alt="">
+            </div>
+        </div>
+   <footer></footer>
+   {include file="common/footer" /}
+</body>
+</html>
+<script src="/static/js/layui.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+<script src="/static/js/common.js"></script>
+<script>
+$('header').load('head.html');
+$('footer').load('footer.html');
+$('#side').load('side.html');
+$('#comment').load('comment.html');
+</script>
+<script type="text/javascript">
+      $('.nav ul li:eq(6)').addClass('active');
+
+   </script>

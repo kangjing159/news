@@ -1,0 +1,268 @@
+<style>
+    .footer_common {
+        margin-bottom: 140px;
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/layui.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<header></header>
+{include file="common/head" }
+<div class="wrap layout">
+    <div class="left">
+        <div class="news_flash"> 
+            <div class="head">
+                <div class="title">
+                    <h3>Thị trường 24h</h3>
+                    <span></span>
+                </div>
+                <div class="time">
+                    <img src="/static/img/time.png" alt="">
+                    <span>2019-08-20 14:15:08</span>
+                </div>
+            </div>
+            <div class="list">
+                <ul>
+                    {volist name="data" id="vo"}
+                        {eq name="vo.type" value="0"}
+                        <li>
+                        <div class="time"><img src="/static/img/news_flash1.png" alt=""><span>{$vo.time}</span></div>
+                       <div class="paragraph">{$vo.editorValue|raw}</div>
+                        </li>
+                        {else/}
+                        <li>
+                        <div class="time"><img src="/static/img/news_flash2.png" alt=""><span class="active">{$vo.time}</span>
+                        </div>
+                        <p class="active">
+                            {$vo.editorValue|raw}
+                        </p>
+                        </li>
+                        {/eq}
+                    {/volist}
+                    
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- 新闻 -->
+        <div class="news_common">
+            <div class="head">
+                <ul>
+                    <li class="active"><span>Tất cả</span></li>
+                    <li><span>Chứng khoán</span></li>
+                    <li><span>Forex</span></li>
+                    <li><span>Kim loại quý</span></li>
+                </ul>
+            </div>
+            <div class="list" >
+                <ul>
+                    {volist name="list" id="v"}
+                    <a href="index/information/details?id={$v.id}">
+                    <li>
+                        <img src="/uploads/{$v.imgurl}" alt="" width="120"> 
+                        <div class="article">
+                            <div>
+                                <h4>{$v.title}</h4>
+                                <p>{$v.introduction}</p>
+                            </div>
+                            <div class="bottom">
+                                <span class="red">
+                                    {switch v.type}
+                                    {case 0}Chứng khoán{/case}
+                                    {case 1}Forex{/case}
+                                    {default /}Kim loại quý
+                                    {/switch}
+                                </span>
+                                <span class="time">{$v.time}</span>
+                            </div>
+                        </div>
+                    </li>
+                    </a>
+                    {/volist}
+                </ul>
+            </div>
+           <!-- Chứng khoán -->
+            <div class="list" style="display: none">
+                <ul>
+                    {volist name="result.0" id="v"}
+                    <a href="index/information/details?id={$v.id}">
+                    <li>
+                        <img src="/uploads/{$v.imgurl}" alt="" width="120">
+                        <div class="article">
+                            <div>
+                                <h4>{$v.title}</h4>
+                                <p>{$v.introduction}</p>
+                            </div>
+                            <div class="bottom">
+                                <span class="red">
+                                    {switch v.type}
+                                    {case 0}Chứng khoán{/case}
+                                    {case 1}Forex{/case}
+                                    {default /}Kim loại quý
+                                    {/switch}
+                                </span>
+                                <span class="time">{$v.time}</span>
+                            </div>
+                        </div>
+                    </li>
+                    </a>
+                    {/volist}
+                </ul>
+            </div>
+            <!-- Forex -->
+            <div class="list" style="display: none">
+                <ul>
+                    {volist name="result.1" id="v"}
+                    <a href="index/information/details?id={$v.id}">
+                    <li>
+                        <img src="/uploads/{$v.imgurl}" alt="" width="120">
+                        <div class="article">
+                            <div>
+                                <h4>{$v.title}</h4>
+                                <p>{$v.introduction}</p>
+                            </div>
+                            <div class="bottom">
+                                <span class="red">
+                                    {switch v.type}
+                                    {case 0}Chứng khoán{/case}
+                                    {case 1}Forex{/case}
+                                    {default /}Kim loại quý
+                                    {/switch}
+                                </span>
+                                <span class="time">{$v.time}</span>
+                            </div>
+                        </div>
+                    </li>
+                </a>
+                    {/volist}
+                </ul>
+            </div>
+            <!-- Kim loại quý -->
+            <div class="list" style="display: none">
+                <ul>
+                    {volist name="result.2" id="v"}
+                    <a href="index/information/details?id={$v.id}">
+                    <li>
+                        <img src="/uploads/{$v.imgurl}" alt="" width="120">
+                        <div class="article">
+                            <div>
+                                <h4>{$v.title}</h4>
+                                <p>{$v.introduction}</p>
+                            </div>
+                            <div class="bottom">
+                                <span class="red">
+                                    {switch v.type}
+                                    {case 0}Chứng khoán{/case}
+                                    {case 1}Forex{/case}
+                                    {default /}Kim loại quý
+                                    {/switch}
+                                </span>
+                                <span class="time">{$v.time}</span>
+                            </div>
+                        </div>
+                    </li>
+                </a>
+                    {/volist}
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+    <div id="side"></div>
+</div>
+<footer></footer>
+<div class="fixed_footer">
+    <div class="head">
+        <h4>Giá niêm yết</h4>
+        <span>Thị trường chứng khoán</span>
+    </div>
+    <div class="content">
+        <ul>
+            <li class="green">
+                <span>Vàn</span>
+                <p>
+                    <span>1497.45</span>
+                    <span>-0.67%</span>
+                </p>
+            </li>
+            <li class="green">
+                <span>Vàn</span>
+                <p>
+                    <span>1497.45</span>
+                    <span>-0.67%</span>
+                </p>
+            </li>
+            <li class="red">
+                <span>Vàn</span>
+                <p>
+                    <span>1497.45</span>
+                    <span>-0.67%</span>
+                </p>
+            </li>
+            <li class="red">
+                <span>Vàn</span>
+                <p>
+                    <span>1497.45</span>
+                    <span>-0.67%</span>
+                </p>
+            </li>
+            <li class="red">
+                <span>Vàn</span>
+                <p>
+                    <span>1497.45</span>
+                    <span>-0.67%</span>
+                </p>
+            </li>
+            <li>
+                <span>Vàn</span>
+                <p>
+                    <span>1497.45</span>
+                    <span>-0.67%</span>
+                </p>
+            </li>
+            <li>
+                <span>Vàn</span>
+                <p>
+                    <span>1497.45</span>
+                    <span>-0.67%</span>
+                </p>
+            </li>
+            <li>
+                <span>Vàn</span>
+                <p>
+                    <span>1497.45</span>
+                    <span>-0.67%</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+{include file="common/footer" /}
+</body>
+
+</html>
+<script src="/static/js/layui.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+<script src="/static/js/common.js"></script>
+
+<!-- <script>
+    $('header').load('head.html', '', function () {
+        $('.serach div span img').css({ 'marginTop': '12px' })
+    });
+    $('footer').load('footer.html');
+    $('#side').load('side.html');
+</script> -->
+  <script type="text/javascript">
+      $('.nav ul li:eq(0)').addClass('active');
+
+   </script>

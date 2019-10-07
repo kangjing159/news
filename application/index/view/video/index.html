@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+  
+</style>
+<body>
+    {include file="common/head" }
+    <header></header>
+    <div class="video_page layout">
+
+        <div class="main_video">
+            <div class="left">
+                    <a href="details?id={$newest[0]['id']}">
+                    <img src="/static/img/video-1.png" alt="">
+                    <img src="/static/img/play-1.png" alt="">
+                    </a>
+            </div>
+            <div class="right">
+                <h6>{$newest[0]['title']}</h6>
+                <p class="introduce">Giới thiệu video：<br>
+                        {$newest[0]['editorValue']|raw}</p>
+                    <div class="statistics">
+                        <span><img src="/static/img/video5.png" alt="">{$newest[0]['time']}</span>
+                        <span><img src="/static/img/video6.png" alt="">{$newest[0]['num']}Lần xem</span>
+                    </div>
+                    <div class="bottom_video">
+                        <img src="/static/img/video_left.png" alt="" class="switch">
+                        <div class="list">
+                            <ul>
+                                {volist name="newest" id="v"}
+                                <li>
+                                        <a href="details?id={$v.id}">
+                                    <div class="text">
+                                        <p>{$v.title}</p>
+                                        <div>
+                                                <span><img src="/static/img/video_white.png" alt=""> {$v.time}</span>
+                                                <span><img src="/static/img/play_white.png" alt=""> {$v.num}Lần xem</span>
+                                        </div>
+                                    </div>
+                                    </a>
+
+                                </li>
+                                {/volist}
+                                
+                            </ul>
+
+                        </div>
+                        <img src="/static/img/video_right.png" alt="" class="switch">
+                    </div>
+            </div>
+        </div>
+
+        <div class="video_type">
+            <div class="news_type">
+                <div class="head">
+                    <h5>Video tin tức</h5>
+                    <a href="">Xem nhiều video hơn</a>
+                </div>
+
+                <div class="left">
+                        <a href="details?id={$tp_new[0]['id']}">
+                    <img src="/static/img/video-3.png" alt="">
+                    <img src="/static/img/play-1.png" alt="">
+                        </a>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li>
+                               <a href="/static/video_details.html"> <div class="text">
+                                        <p>美联储决议来袭 黄金或迎巨震</p>
+                                        <div>
+                                                <span><img src="/static/img/video_white.png" alt=""> 2019-08-20</span>
+                                                <span><img src="/static/img/play_white.png" alt=""> 3562次播放</span>
+                                        </div>
+                                    </div>
+                                </a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+            <div class="news_type">
+                    <div class="head">
+                        <h5>华尔街时刻</h5>
+                        <a href="">更多视频</a>
+                    </div>
+    
+                    <div class="left">
+                            <a href="details?id={$tp_new[1]['id']}">
+                        <img src="/static/img/video-3.png" alt="">
+                        <img src="/static/img/play-1.png" alt="">
+                            </a>
+                    </div>
+                    <div class="right">
+                        <ul>
+                            <li>
+                                   <a href="/static/video_details.html"> <div class="text">
+                                            <p>美联储决议来袭 黄金或迎巨震</p>
+                                            <div>
+                                                    <span><img src="/static/img/video_white.png" alt=""> 2019-08-20</span>
+                                                    <span><img src="/static/img/play_white.png" alt=""> 3562次播放</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                            </li>
+                            
+                          
+                        </ul>
+                    </div>
+                </div>
+                <div class="news_type">
+                        <div class="head">
+                            <h5>国外精选</h5>
+                            <a href="">更多视频</a>
+                        </div>
+        
+                        <div class="left">
+                                <a href="details?id={$tp_new[2]['id']}">
+                            <img src="/static/img/video-3.png" alt="">
+                            <img src="/static/img/play-1.png" alt="">
+                                </a>
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li>
+                                       <a href="/static/video_details.html"> <div class="text">
+                                                <p>美联储决议来袭 黄金或迎巨震</p>
+                                                <div>
+                                                        <span><img src="/static/img/video_white.png" alt=""> 2019-08-20</span>
+                                                        <span><img src="/static/img/play_white.png" alt=""> 3562次播放</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                </li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+        </div>  
+    </div>
+    <footer></footer>
+    {include file="common/footer" /}
+</body>
+</html>
+<script src="/static//layui.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+<script src="/static//common.js"></script>
+<script type="text/javascript">
+      $('.nav ul li:eq(3)').addClass('active');
+
+   </script>

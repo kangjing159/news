@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/layui.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+
+<body>
+  <!-- 头部 -->
+  <div class="header">
+        <div class="layout content">
+            <a href="">Theo dõi chúng tôi</a>
+            <div class="user">
+                <a href="">Đăng nhập</a>
+                <a href="" class="register">Đăng ký</a>
+                <!-- <a href="" lang='en' class='lang'>Englisg</a>
+                <a href="" lang='vn' class='lang'>越南语</a> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="layout">
+
+        <!-- 搜索 -->
+        <div class="serach">
+            <h1 class="logo"><a href=""><img src="/static/img/logo.png" alt=""></a></h1>
+            <div>
+                <input type="text" name="title" required lay-verify="required" placeholder="Tìm kiếm" autocomplete="off"
+                    class="layui-input">
+                <span><img src="/static/img/serach.png" alt=""></span>
+            </div>
+        </div>
+
+        <!-- 导航 -->
+        <div class="nav">
+            <ul>
+                <li  ><a href="/">Trang chủ</a></li>
+                <li><a href="{:url('information/index')}">Dữ liệu</a></li>
+                <li><a href="{:url('data/index')}">Dữ liệu</a></li>
+                <li><a href="{:url('video/index')}">Video</a></li>
+                <li><a href="{:url('catalog/index')}">Giới thiệu</a></li>
+                <li><a href="{:url('viewpoint/index')}">Quan điểm đầu tư</a></li>
+                <li><a href="{:url('calendar/index')}">Lịch kinh tế</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+     
+        $('.lang').click(function(){
+            var data={'lang':$(this).attr('lang')}
+            $.get("{:url('Index/lang')}",data,function(){
+            location.reload();
+            })
+        })
+    </script>   
+
